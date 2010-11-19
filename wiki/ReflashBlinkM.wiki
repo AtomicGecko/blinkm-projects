@@ -3,10 +3,15 @@
 
 = Introduction =
 
-Add your content here.
+All BlinkM-family devices have the ability to have their firmware upgraded. This means you can install your own firmware on the devices (using them as an ATtiny development board), or trying out alternative firmwares like [http://code.google.com/p/codalyze/wiki/CyzRgb CyzRgb].
 
+Previously you needed an AVR ISP programmer like the [http://www.atmel.com/dyn/products/tools_card.asp?tool_id=3808 AVRISPmkII] or the [http://www.adafruit.com/index.php?main_page=product_info&cPath=16&products_id=46 USBtinyISP].  But thanks to the [http://arduino.cc/en/Tutorial/ArduinoISP ArduinoISP] sketch that ships with Arduino now.  If you have already have an Arduino, you can easily reflash your BlinkM with new firmware.
+
+The ReflashBlinkM application is a tool for Mac OS X and Windows that uses ArduinoISP to help you reflash BlinkMs to their default firmware.  ReflashBlinkM is written in [http://processing.org/ Processing].
 
 = Details =
+
+
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
