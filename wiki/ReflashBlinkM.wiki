@@ -1,19 +1,34 @@
 #summary How to update the firmware in a BlinkM
 #labels blinkm,firmware,arduino
 
+http://farm5.static.flickr.com/4154/5189904937_589a3194e0_o.png
+
 = Introduction =
 
 All BlinkM-family devices have the ability to have their firmware upgraded. This means you can install your own firmware on the devices (using them as an ATtiny development board), or trying out alternative firmwares like [http://code.google.com/p/codalyze/wiki/CyzRgb CyzRgb].
 
-Previously you needed an AVR ISP programmer like the [http://www.atmel.com/dyn/products/tools_card.asp?tool_id=3808 AVRISPmkII] or the [http://www.adafruit.com/index.php?main_page=product_info&cPath=16&products_id=46 USBtinyISP].  But thanks to the [http://arduino.cc/en/Tutorial/ArduinoISP ArduinoISP] sketch that ships with Arduino now.  If you have already have an Arduino, you can easily reflash your BlinkM with new firmware.
+Previously you needed an AVR ISP programmer like the [http://www.atmel.com/dyn/products/tools_card.asp?tool_id=3808 AVRISPmkII] or the [http://www.adafruit.com/index.php?main_page=product_info&cPath=16&products_id=46 USBtinyISP].  Thanks to the [http://arduino.cc/en/Tutorial/ArduinoISP ArduinoISP] sketch that ships with Arduino, if you have already have an Arduino, you can easily reflash your BlinkM with new firmware.
 
 The ReflashBlinkM application is a tool for Mac OS X and Windows that uses ArduinoISP to help you reflash BlinkMs to their default firmware.  ReflashBlinkM is written in [http://processing.org/ Processing].
 
-= Details =
+= Steps to using ReflashBlinkM =
+  # Download ReflashBlinkM app for your OS
+  # Load ArduinoISP onto an Arduino
+  # Wire up the BlinkM to Arduino 
+  # Plug Arduino + BlinkM into USB of your computer
+  # Launch ReflashBlinkM
+  # Pick the firmware you want and the serial port the Arduino is on
+  # Press "Reflash"
 
 
+= Detailed Step-by-step =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+== 1. Download ReflashBlinkM app ==
+The [http://code.google.com/p/blinkm-projects/downloads/list Downloads] tab has the list of ReflashBlinkM apps.  Pick the one for your OS, and unzip it.
+
+== 2. Load ArduinoISP onto an Arduino ==
+The ArduinoISP sketch comes with Arduino.  Select it and program the Arduino with it.
+http://farm2.static.flickr.com/1002/5189961979_09e33bf1bd_z.jpg
+
+== 3. Wire up BlinkM to Arduino ==
+The BlinkM has to be wired up in a different manner than the way it normally is.  The AVRISP protocol to reflash needs 6-wires.
