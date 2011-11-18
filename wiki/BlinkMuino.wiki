@@ -9,15 +9,15 @@ Here's a quick video showing how it all works.
 <h4> BlinkM Capabilities as an Arduino </h4>
 
 The BlinkM board doesn't have nearly the I/O pins and other features of a real Arduino board.  But it is very tiny.  Here are its capabilities:
-- 0.4" square (MinM), or 0.6" square (BlinkM)
-- 8MHz clock speed
-- 8k bytes Flash ROM (4kB on ATtiny45)
-- 512 bytes RAM      (256 bytes on ATtiny45)
-- 512 bytes EEPROM   (256 bytes on ATtiny45)
-- 5 I/O lines total, partitioned as:
-- 3 high-brightness LEDs in RGB package
-- 2 digital I/O lines 
-- 1 analog I/O line  (shared with digital)
+  * 0.4" square (MinM), or 0.6" square (BlinkM)
+  * 8MHz clock speed
+  * 8k bytes Flash ROM (4kB on ATtiny45)
+  * 512 bytes RAM      (256 bytes on ATtiny45)
+  * 512 bytes EEPROM   (256 bytes on ATtiny45)
+  * 5 I/O lines total, partitioned as:
+  * 3 high-brightness LEDs in RGB package
+  * 2 digital I/O lines 
+  * 1 analog I/O line  (shared with digital)
 
 And if you snip off the RGB LED, the three I/O lines used by it can be used as analog or digital inputs.
 
@@ -25,7 +25,7 @@ Most libraries will probably not work without some modifications.  You don't get
 
 <h4> Software Setup </h4>
 
- To enable the Arduino software to program BlinkMs, you'll need to teach Arduino about new "Boards".  This is done via a set of config files and AVR core code.  This work has been done by the <a href="http://hlt.media.mit.edu/wiki/pmwiki.php?n=Main.ArduinoATtiny4585">High-Low Tech group at MIT</a> and <a href="http://sites.google.com/site/elettronicaarduinoesperimenti/Home/arduino-ide-and-attiny45">Alessandro Saporetti</a>.
+To enable the Arduino software to program BlinkMs, you'll need to teach Arduino about new "Boards".  This is done via a set of config files and AVR core code.  This work has been done by the <a href="http://hlt.media.mit.edu/wiki/pmwiki.php?n=Main.ArduinoATtiny4585">High-Low Tech group at MIT</a> and <a href="http://sites.google.com/site/elettronicaarduinoesperimenti/Home/arduino-ide-and-attiny45">Alessandro Saporetti</a>.
 
 The <a href="http://blinkm-projects.googlecode.com/files/BlinkMuino.zip">BlinkMuino.zip</a> zip file contains everything you need.  This zip file works for Mac OS X, Windows, and Linux.
 
@@ -61,7 +61,7 @@ As an example, below is the "<a href="http://code.google.com/p/blinkm-projects/s
 
 <a href="http://www.flickr.com/photos/todbot/5549460276/" title="BlinkMuino ServoKnob" class="flickr-image alignnone"><img src="http://farm6.static.flickr.com/5053/5549460276_e6bb77dd32.jpg" alt="BlinkMuino ServoKnob" class=""  /></a>
 
-<pre>
+{{{
 /*
  * BlinkMuinoServoKnob -- Control a servo with a knob 
  * 2011 - Tod E. Kurt - http://todbot.com/blog/ - http://thingm.com/
@@ -105,7 +105,8 @@ void loop() {
 
   digitalWrite(redPin, LOW);      // say we're done
   delay(20);
-}</pre>
+}
+}}}
 
 <h4> Getting BlinkM back to Factory Firmware </h4>
 
