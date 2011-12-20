@@ -7,7 +7,7 @@ BlinkMCommunicator is a small Arduino sketch that acts essentially like a serial
 = Details =
 
 Installation Steps
-1. Download BlinkMCommunicator zip file
-2. Unzip file and open up file in the Arduino software
-3. Upload BlinkMCommunicator sketch to your Arduino
-4. Plug BlinkM in and talk to it via BlinkMCommunicator commands 
+  # Download BlinkMCommunicator zip file
+  # Unzip file and open up file in the Arduino software
+  # Upload BlinkMCommunicator sketch to your Arduino
+  # Plug BlinkM in and talk to it via BlinkMCommunicator commands 
