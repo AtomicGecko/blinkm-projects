@@ -1,6 +1,6 @@
 #summary Run Arduino sketches on BlinkM Smart LEDs
 
-Did you know you can run <a href="http://arduino.cc">Arduino</a> programs on tiny <a href="http://blinkm.thingm.com">BlinkM</a> Smart LEDs?  It might make BlinkM the smallest Arduino so far.  To use a BlinkM as an Arduino, all you need is the free Arduino software, a low-cost AVR programmer, some wire, and a BlinkM. 
+Did you know you can run <a href="http://arduino.cc">Arduino</a> programs on tiny <a href="http://blinkm.thingm.com">BlinkM</a> Smart LEDs?  It might make BlinkM the smallest Arduino so far.  To use a BlinkM as an Arduino, all you need is the free Arduino software, a low-cost AVR programmer (which could be a regular Arduino), some wire, and a BlinkM. 
 
 Here's a quick video showing how it all works.
 
@@ -8,7 +8,9 @@ Here's a quick video showing how it all works.
 
 <h4> BlinkM Capabilities as an Arduino </h4>
 
-The BlinkM board doesn't have nearly the I/O pins and other features of a real Arduino board.  But it is very tiny.  Here are its capabilities:
+BlinkM, BlinkM MinM, and BlinkM MaxM can all be used as tiny Arduinos.  BlinkM and MinM have an ATtiny85 (or ATtiny45) chip, while the BlinkM MaxM has an ATtiny84 chip.
+
+BlinkM boards don't have nearly the I/O pins and other features of a real Arduino board.  But it is very tiny.  Here are its capabilities:
   * 0.4" square (MinM), or 0.6" square (BlinkM)
   * 8MHz clock speed
   * 8k bytes Flash ROM (4kB on ATtiny45)
@@ -25,20 +27,24 @@ Most libraries will probably not work without some modifications.  You don't get
 
 <h4> Software Setup </h4>
 
-To enable the Arduino software to program BlinkMs, you'll need to teach Arduino about new "Boards".  This is done via a set of config files and AVR core code.  This work has been done by the <a href="http://hlt.media.mit.edu/wiki/pmwiki.php?n=Main.ArduinoATtiny4585">High-Low Tech group at MIT</a> and <a href="http://sites.google.com/site/elettronicaarduinoesperimenti/Home/arduino-ide-and-attiny45">Alessandro Saporetti</a>.
+To enable the Arduino software to program BlinkMs, you'll need to teach Arduino about new "Boards".  This is done via a set of config files and AVR core code.  This work has been done by the <a href="http://hlt.media.mit.edu/?p=1695">High-Low Tech group at MIT</a>.  A <a href="http://hlt.media.mit.edu/wiki/pmwiki.php?n=Main.ArduinoATtiny4585">pre-Arduino 1.0 version is here</a> and based on work by <a href="http://sites.google.com/site/elettronicaarduinoesperimenti/Home/arduino-ide-and-attiny45">Alessandro Saporetti</a>.
 
-The <a href="http://blinkm-projects.googlecode.com/files/BlinkMuino.zip">BlinkMuino.zip</a> zip file contains everything you need.  This zip file works for Mac OS X, Windows, and Linux.
+The <a href="http://blinkm-projects.googlecode.com/files/BlinkMuino.zip">BlinkMuino.zip</a> zip file contains everything you need, including some examples to get you started.  This zip file works for Mac OS X, Windows, and Linux.
 
 Unzip the BlinkMuino.zip file, and copy the resulting "hardware" folder into your Arduino sketchbook folder.  You can find the location of your sketchbook by opening the Arduino preferences and looking at the "Sketchbook location" field. 
 
-Restart the Arduino software and the "Tools" -> "Board" menu should now have entries for BlinkMs. There are three sets of entries, depending on the type of BlinkM and programmer you have.  Select the entry that is correct for your hardware.
+Restart the Arduino software and the "Tools" -> "Board" menu should now have entries for BlinkMs. There are three different entries, depending on the type of BlinkM you have.  
+
+If you are using an Arduino as the programmer, upload the ArduinoISP sketch (found under File->Examples) to your Arduino.  Be sure to check out the <a href="http://arduino.cc/en/Tutorial/ArduinoISP">ArduinoISP documentation</a> as there might be some gotchas depending on your Arduino type.
+
+If you are using a normal AVR-ISP programmer, choose its type under the Tools->Programmers menu.
 
 <a href="http://www.flickr.com/photos/todbot/5548882381/" title="BlinkMuino Arduino IDE" class="flickr-image alignnone"><img src="http://farm6.static.flickr.com/5013/5548882381_51cb227b32.jpg" alt="BlinkMuino Arduino IDE" class=""  /></a>
 
 
 <h4> Hardware Setup </h4>
 
-You will need an AVR-ISP programmer to program the BlinkM boards.  If you have an Arduino board, the ArduinoISP sketch turns the Arduino into an AVR-ISP programmer.  However, it doesn't work for all Arduino boards. Or you can use a regular AVR-ISP programmer.  These are fairly low-cost: the <a href="http://search.digikey.com/scripts/DkSearch/dksus.dll?Cat=2621880&k=avrisp">Atmel AVRISPmkII</a> is 35 USD, while the <a href="http://www.adafruit.com/index.php?main_page=product_info&cPath=16&products_id=46">Adafruit's USBtinyISP</a> is 22 USD.
+You will need an AVR-ISP programmer to program the BlinkM boards.  An Arduino board running the ArduinoISP sketch turns the Arduino into an AVR-ISP programmer.  Or you can use a regular AVR-ISP programmer.  These are fairly low-cost: the <a href="http://search.digikey.com/scripts/DkSearch/dksus.dll?Cat=2621880&k=avrisp">Atmel AVRISPmkII</a> is 35 USD, while the <a href="http://www.adafruit.com/index.php?main_page=product_info&cPath=16&products_id=46">Adafruit's USBtinyISP</a> is 22 USD.
 
 With a programmer acquired, wire up the BlinkM to it.  If using a regular AVR-ISP programmer, it should be wired up like below.  The intro video shows a practical method of using a breadboard and jumper wires to convert the 6-pin AVR-ISP connector to something a BlinkM can use.  Note that some programmers do not supply power to the BlinkM, so you may need to run power too.
 
